@@ -5,20 +5,27 @@ Calculate the river normalized steepness index (ksn) from a DEM (Digital Elevati
 ## Installation
 
 ```bash
-uv sync
+# Install as a global CLI tool (requires Python 3.10+)
+uv tool install . --python 3.10
+
+# Or run directly from the project directory
+uv run river-ksn --help
 ```
 
 ## Usage
 
 ```bash
 # Auto-determine theta and channel threshold
-python -m river_ksn path/to/dem.tif -o results/
+river-ksn path/to/dem.tif -o results/
 
 # Specify parameters
-python -m river_ksn dem.tif -o results/ --theta 0.45 --threshold 500
+river-ksn dem.tif -o results/ --theta 0.45 --threshold 500
 
 # Export intermediate rasters
-python -m river_ksn dem.tif --intermediate
+river-ksn dem.tif --intermediate
+
+# Or if running from project source:
+uv run river-ksn dem.tif -o results/
 ```
 
 ## Output
