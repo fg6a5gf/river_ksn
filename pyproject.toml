@@ -1,0 +1,22 @@
+[project]
+name = "river-ksn"
+version = "0.1.0"
+description = "Calculate river normalized steepness index (ksn) from DEM"
+requires-python = ">=3.10"
+dependencies = [
+    "rasterio>=1.3",
+    "richdem>=0.3",
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "setuptools<70",
+]
+
+[project.scripts]
+river-ksn = "river_ksn.__main__:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
